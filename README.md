@@ -1,5 +1,5 @@
 # node-iterm2-image
-Node.js bindings to display images in iTerm2 nightly builds.
+Node.js bindings to display images in iTerm2 (nightly builds only).
 
 ## Install
 ```sh
@@ -14,7 +14,10 @@ var imgLoader = require('node-iterm2-image');
 Load (and display) image from filepath:
 
 ```js
-imgLoader('./path-to-file.png');
+imgLoader('./path-to-file.png', function () {
+  console.log('done!');
+});
+```
 
 Easy, huh? Now using streams:
 
@@ -25,10 +28,17 @@ var img = 'http://your/image';
 
 http.get(img, function(res) {
   if (res.statusCode === 200) {
-    imgLoader(res);
+    imgLoader(res, function () {
+      console.log('done!');
+    });
   }
 });
 ```
+
+## TODO
+
+ * Parametrize output stream.
+ * Return something meaningful in callback.
 
 ## Credits
 
