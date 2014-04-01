@@ -35,8 +35,9 @@ module.exports = function (filePathOrStream, callback) {
 
   outputStream.write(s);
   
-  var x = inputStream.pipe(base64.encode()).pipe(outputStream);
-  inputStream.on('end', function () {
+  var base64EncodingStream = inputStream.pipe(base64.encode());
+  base64EncodingStream.pipe(outputStream);
+  base64EncodingStream.on('end', function () {
     outputStream.write('\07\n');
     if (callback) {
       callback();
