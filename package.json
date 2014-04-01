@@ -3,5 +3,9 @@
   "version": "0.0.1",
   "dependencies": {
     "base64-stream": "^0.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pose/node-iterm2-image.git"
   }
 }
