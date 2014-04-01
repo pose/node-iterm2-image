@@ -14,10 +14,9 @@ module.exports = function (filePathOrStream, callback) {
     inputStream  = fs.createReadStream(filePathOrStream);
     metadata.size = stat.size;
     metadata.name = new Buffer(path.basename(filePathOrStream, true)).toString('base64');
-  } else if (filePathOrStream instanceof Readable) {
+  } else if (filePathOrStream) {
+    // TODO better input validation
     inputStream = filePathOrStream;
-  } else {
-    throw new Error('Parameter should be either a filepath or stream');
   }
 
   // TODO Parametrize me
