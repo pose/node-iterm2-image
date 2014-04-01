@@ -42,7 +42,7 @@ http.get(img, function(res) {
 
 ## Credits
 
-Inspired by ![iTerm2 Site image documentation section](http://www.iterm2.com/images.html#/section/home) and ![Python Bindings](https://pypi.python.org/pypi/iterm2_image).
+Inspired by [iTerm2 Site image documentation section](http://www.iterm2.com/images.html#/section/home) and [Python Bindings](https://pypi.python.org/pypi/iterm2_image).
 
 Nyan Cat image obtained from [here](http://arkannix.deviantart.com/art/WIP-NyanVentures-Flash-Game-359963606).
 
