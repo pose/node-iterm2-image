@@ -3,12 +3,12 @@ Node.js bindings to display images in iTerm2 (nightly builds only).
 
 ## Install
 ```sh
-npm install node-iterm2-image
+npm install iterm2-image
 ```
 
 ## Usage
 ```js
-var imgLoader = require('node-iterm2-image');
+var imgLoader = require('iterm2-image');
 ```
 
 Load (and display) image from filepath:
