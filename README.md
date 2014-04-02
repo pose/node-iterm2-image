@@ -1,6 +1,8 @@
 # node-iterm2-image
 Node.js bindings to display images in iTerm2 (nightly builds only).
 
+![iterm2-image](https://cloud.githubusercontent.com/assets/419703/2586880/6caee458-ba0d-11e3-9c87-e6013a7d0175.gif)
+
 ## Install
 ```sh
 npm install iterm2-image
