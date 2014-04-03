@@ -13,7 +13,7 @@ npm install iterm2-image
 var imgLoader = require('iterm2-image');
 ```
 
-Load (and display) image from filepath:
+Load (and display) an image from a filepath:
 
 ```js
 imgLoader('./path-to-file.png', function () {
