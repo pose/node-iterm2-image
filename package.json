@@ -2,7 +2,8 @@
   "name": "iterm2-image",
   "version": "0.0.2",
   "dependencies": {
-    "base64-stream": "^0.1.2"
+    "base64-stream": "^0.1.2",
+    "isstream": "^0.1.0"
   },
   "repository": {
     "type": "git",

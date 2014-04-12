@@ -2,6 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var Readable = require('stream').Readable;
 
+var isStream = require('isStream');
 var base64 = require('base64-stream');
 
 module.exports = function (filePathOrStream, callback) {
@@ -14,9 +15,10 @@ module.exports = function (filePathOrStream, callback) {
     inputStream  = fs.createReadStream(filePathOrStream);
     metadata.size = stat.size;
     metadata.name = new Buffer(path.basename(filePathOrStream, true)).toString('base64');
-  } else if (filePathOrStream) {
-    // TODO better input validation
+  } else if (isStream(filePathOrStream)) {
     inputStream = filePathOrStream;
+  } else {
+    throw new Error('Invalid parameter: it should be either string or stream');
   }
 
   // TODO Parametrize me
