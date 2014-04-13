@@ -10,13 +10,13 @@ npm install iterm2-image
 
 ## Usage
 ```js
-var imgLoader = require('iterm2-image');
+var drawInIterm = require('iterm2-image');
 ```
 
 Load (and display) an image from a filepath:
 
 ```js
-imgLoader('./path-to-file.png', function () {
+drawInIterm('./path-to-file.png', function () {
   console.log('done!');
 });
 ```
@@ -30,7 +30,7 @@ var img = 'http://your/image';
 
 http.get(img, function(res) {
   if (res.statusCode === 200) {
-    imgLoader(res, function () {
+    drawInIterm(res, function () {
       console.log('done!');
     });
   }
