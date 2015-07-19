@@ -1,6 +1,6 @@
 {
   "name": "iterm2-image",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "dependencies": {
     "base64-stream": "^0.1.2",
     "isstream": "^0.1.0"
