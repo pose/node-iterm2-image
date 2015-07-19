@@ -16,7 +16,8 @@ var imgLoader = require('iterm2-image');
 Load (and display) an image from a filepath:
 
 ```js
-imgLoader('./path-to-file.png', function () {
+imgLoader('./path-to-file.png', function (err) {
+  if (err) { throw err; }
   console.log('done!');
 });
 ```
@@ -30,7 +31,8 @@ var img = 'http://your/image';
 
 http.get(img, function(res) {
   if (res.statusCode === 200) {
-    imgLoader(res, function () {
+    imgLoader(res, function (err) {
+      if (err) { throw err; }
       console.log('done!');
     });
   }
@@ -51,7 +53,7 @@ Nyan Cat image obtained from [here](http://arkannix.deviantart.com/art/WIP-NyanV
 ## License
 (The MIT License)
 
-Copyright (c) 2014 Alberto Pose < albertopose at gmail.com >
+Copyright (c) 2014 - 2015 Alberto Pose < albertopose at gmail.com >
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
