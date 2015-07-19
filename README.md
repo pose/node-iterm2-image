@@ -17,6 +17,8 @@ Load (and display) an image from a filepath:
 
 ```js
 drawInIterm('./path-to-file.png', function () {
+imgLoader('./path-to-file.png', function (err) {
+  if (err) { throw err; }
   console.log('done!');
 });
 ```
@@ -31,6 +33,7 @@ var img = 'http://your/image';
 http.get(img, function(res) {
   if (res.statusCode === 200) {
     drawInIterm(res, function () {
+      if (err) { throw err; }
       console.log('done!');
     });
   }
