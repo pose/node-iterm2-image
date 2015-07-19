@@ -1,16 +1,19 @@
-var http = require('https');
+var assert = require('assert');
+var http = require('http');
 
 var iterm2ImageLoader = require('./index.js');
 
-function urlExample() {
-  // TODO Your image URL goes here
-  var img = '';
-  http.get(img, function(res) {
-    if (res.statusCode === 200) {
-      iterm2ImageLoader(res);
-    }
-  });
-}
+iterm2ImageLoader('./figure.png', function (err) {
+  assert.ifError(err);
+});
 
-iterm2ImageLoader('./figure.png', urlExample);
-
+// URL example
+// TODO Your image URL goes here
+// var imgUrl = '';
+// http.get(imgUrl, function(res) {
+//   if (res.statusCode === 200) {
+//     iterm2ImageLoader(res, function (err) {
+//       assert.ifError(err);
+//     });
+//   }
+// });

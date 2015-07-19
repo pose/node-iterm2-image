@@ -6,6 +6,11 @@ var isStream = require('isStream');
 var base64 = require('base64-stream');
 
 module.exports = function (filePathOrStream, callback) {
+
+  if (!callback) {
+    throw new Error('callback is required');
+  }
+
   var metadata = {};
   var outputStream = process.stdout;
   var inputStream;
@@ -36,13 +41,18 @@ module.exports = function (filePathOrStream, callback) {
   s = s.slice(0, -1) + ':';
 
   outputStream.write(s);
-  
+
   var base64EncodingStream = inputStream.pipe(base64.encode());
   base64EncodingStream.pipe(outputStream);
-  base64EncodingStream.on('end', function () {
+
+  base64EncodingStream.once('error', function (err) {
+    base64EncodingStream.removeAllListeners('end');
+    callabck(err);
+  });
+
+  base64EncodingStream.once('end', function () {
+    base64EncodingStream.removeAllListeners('error');
     outputStream.write('\07\n');
-    if (callback) {
-      callback();
-    }
+    callback();
   });
 };
