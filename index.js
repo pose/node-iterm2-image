@@ -47,7 +47,7 @@ module.exports = function (filePathOrStream, callback) {
 
   base64EncodingStream.once('error', function (err) {
     base64EncodingStream.removeAllListeners('end');
-    callabck(err);
+    callback(err);
   });
 
   base64EncodingStream.once('end', function () {
