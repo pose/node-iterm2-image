@@ -19,7 +19,7 @@ module.exports = function (filePathOrStream, callback) {
     var stat = fs.statSync(filePathOrStream);
     inputStream  = fs.createReadStream(filePathOrStream);
     metadata.size = stat.size;
-    metadata.name = new Buffer(path.basename(filePathOrStream, true)).toString('base64');
+    metadata.name = new Buffer(path.basename(filePathOrStream)).toString('base64');
   } else if (isStream(filePathOrStream)) {
     inputStream = filePathOrStream;
   } else {
