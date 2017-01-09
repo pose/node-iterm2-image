@@ -32,7 +32,7 @@ var img = 'http://your/image';
 
 http.get(img, function(res) {
   if (res.statusCode === 200) {
-    drawInIterm(res, function () {
+    drawInIterm(res, function (err) {
       if (err) { throw err; }
       console.log('done!');
     });
