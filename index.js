@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var Readable = require('stream').Readable;
 
-var isStream = require('isStream');
+var isStream = require('isstream');
 var base64 = require('base64-stream');
 
 module.exports = function (filePathOrStream, callback) {
